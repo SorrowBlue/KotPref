@@ -2,6 +2,7 @@ plugins {
     `android-library`
     `kotlin-android`
     `kotlin-android-extensions`
+    maven
 }
 
 android {
@@ -30,6 +31,22 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
 }
+
+
+//tasks {
+//    getByName<Upload>("uploadArchives") {
+//        repositories {
+//            withConvention(MavenRepositoryHandlerConvention::class) {
+//                mavenDeployer {
+//                    repository = "file://${rootDir}/docs/repository/"
+//                    pom.version = "1.0.0"
+//                    pom.groupId = "com.sorrowblue.android.kotpref"    // グループ名
+//                    pom.artifactId = "kotpref" // ライブラリ名
+//                }
+//            }
+//        }
+//    }
+//}
 
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to arrayOf("*.jar"))))
