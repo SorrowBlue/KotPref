@@ -32,28 +32,15 @@ android {
     }
 }
 
-
-//tasks {
-//    getByName<Upload>("uploadArchives") {
-//        repositories {
-//            withConvention(MavenRepositoryHandlerConvention::class) {
-//                mavenDeployer {
-//                    repository = "file://${rootDir}/docs/repository/"
-//                    pom.version = "1.0.0"
-//                    pom.groupId = "com.sorrowblue.android.kotpref"    // グループ名
-//                    pom.artifactId = "kotpref" // ライブラリ名
-//                }
-//            }
-//        }
-//    }
-//}
+uploadArchives(version = "1.0.0", artifactId = "kotpref")
 
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to arrayOf("*.jar"))))
     implementation(Deps.`kotlin-stdlib-jdk7`)
     implementation(Deps.`core-ktx`)
     implementation(Deps.`preference-ktx`)
-    api(project(":annotation"))
+//    api(project(":annotation"))
+    api("com.sorrowblue.android.kotpref:annotation:1.0.0")
     testImplementation(Deps.junit)
     androidTestImplementation(Deps.`ext-junit`)
     androidTestImplementation(Deps.`espresso-core`)

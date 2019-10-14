@@ -23,6 +23,11 @@ allprojects {
 }
 
 subprojects {
+
+    repositories {
+        maven(url = "https://sorrowblue.com/KotPref/repository")
+    }
+
     tasks.withType<KotlinCompile>().configureEach {
         println("Configuring $name in project ${project.name}...")
         kotlinOptions {

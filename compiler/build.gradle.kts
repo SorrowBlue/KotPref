@@ -4,20 +4,7 @@ plugins {
     maven
 }
 
-//tasks {
-//    getByName<Upload>("uploadArchives") {
-//        repositories {
-//            withConvention(MavenRepositoryHandlerConvention::class) {
-//                mavenDeployer {
-//                    repository = "file://${rootDir}/docs/repository/"
-//                    pom.version = "1.0.0"
-//                    pom.groupId = "com.sorrowblue.android.kotpref"    // グループ名
-//                    pom.artifactId = "compiler" // ライブラリ名
-//                }
-//            }
-//        }
-//    }
-//}
+uploadArchives(version = "1.0.0", artifactId = "compiler")
 
 dependencies {
     implementation(Deps.`kotlin-stdlib`)
