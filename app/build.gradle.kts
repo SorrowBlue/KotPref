@@ -39,8 +39,10 @@ dependencies {
     Deps.lifecycles.forEach { implementation(it) }
     implementation("androidx.activity:activity-ktx:1.1.0-beta01")
     implementation("androidx.cardview:cardview:1.0.0")
-    implementation(project(":kotpref"))
-    kapt(project(":compiler"))
+//    implementation(project(":kotpref"))
+//    kapt(project(":compiler"))
+    implementation("com.sorrowblue.android.kotpref:kotpref:1.0.0")
+    kapt("com.sorrowblue.android.kotpref:compiler:1.0.0")
     implementation(Deps.constraintlayout)
     testImplementation(Deps.junit)
     androidTestImplementation(Deps.`ext-junit`)
