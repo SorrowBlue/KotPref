@@ -8,6 +8,9 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.observe
 import com.sorrowblue.android.kotpref.R
 import com.sorrowblue.android.kotpref.databinding.ActivityMainBinding
+import com.sorrowblue.android.kotpref.example.preference.UserPreference
+import com.sorrowblue.android.kotpref.getSharedPreference
+import com.sorrowblue.android.kotpref.putSharedPreference
 
 class MainActivity : AppCompatActivity() {
 

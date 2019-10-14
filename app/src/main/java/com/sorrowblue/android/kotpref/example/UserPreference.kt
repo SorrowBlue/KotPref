@@ -4,7 +4,7 @@ import com.sorrowblue.android.kotpref.R
 import com.sorrowblue.android.kotpref.annotation.KotPref
 import com.sorrowblue.android.kotpref.annotation.KotPrefKey
 
-@KotPref("user_settings-")
+@KotPref(keyPrefix = "user_settings-", classRename = "UserPreference")
 object UserPreference {
 
     @KotPrefKey(key = "user_id")
