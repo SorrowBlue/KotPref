@@ -13,22 +13,9 @@ tasks {
                     withGroovyBuilder {
                         "repository"("url" to uri("${rootDir}/docs/repository/"))
                     }
-                    pom.project {
-                        withGroovyBuilder {
-                            "parent" {
-                                "groupId"("com.sorrowblue.android.kotpref")
-                                "artifactId"("annotation")
-                                "version"("1.0.0")
-                            }
-                            "licenses" {
-                                "license" {
-                                    "name"("The Apache Software License, Version 2.0")
-                                    "url"("http://www.apache.org/licenses/LICENSE-2.0.txt")
-                                    "distribution"("repo")
-                                }
-                            }
-                        }
-                    }
+                    pom.groupId = "com.sorrowblue.android.kotpref"
+                    pom.version = "1.0.0"
+                    pom.artifactId = "annotation"
                 }
             }
         }
