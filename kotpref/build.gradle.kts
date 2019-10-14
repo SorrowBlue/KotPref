@@ -32,7 +32,7 @@ android {
     }
 }
 
-uploadArchives(version = "1.0.0", artifactId = "kotpref")
+uploadArchives(version = "1.0.1", artifactId = "kotpref")
 
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to arrayOf("*.jar"))))
@@ -40,7 +40,7 @@ dependencies {
     implementation(Deps.`core-ktx`)
     implementation(Deps.`preference-ktx`)
 //    api(project(":annotation"))
-    api("com.sorrowblue.android.kotpref:annotation:1.0.0")
+    api("com.sorrowblue.android.kotpref:annotation:1.0.1")
     testImplementation(Deps.junit)
     androidTestImplementation(Deps.`ext-junit`)
     androidTestImplementation(Deps.`espresso-core`)

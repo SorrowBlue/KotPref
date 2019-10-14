@@ -4,12 +4,12 @@ plugins {
     maven
 }
 
-uploadArchives(version = "1.0.0", artifactId = "compiler")
+uploadArchives(version = "1.0.1", artifactId = "compiler")
 
 dependencies {
     implementation(Deps.`kotlin-stdlib`)
     kapt("com.google.auto.service:auto-service:1.0-rc6")
     implementation("com.google.auto.service:auto-service:1.0-rc6")
 //    implementation(project(":annotation"))
-    implementation("com.sorrowblue.android.kotpref:annotation:1.0.0")
+    implementation("com.sorrowblue.android.kotpref:annotation:1.0.1")
 }
