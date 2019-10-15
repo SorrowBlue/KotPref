@@ -1,24 +1,23 @@
 package com.sorrowblue.android.kotpref.example
 
-import com.sorrowblue.android.kotpref.R
 import com.sorrowblue.android.kotpref.annotation.KotPref
 import com.sorrowblue.android.kotpref.annotation.KotPrefKey
 
-@KotPref(keyPrefix = "user_settings-", classRename = "UserPreference")
+@KotPref(keyPrefix = "user_", classRename = "UserPreference")
 object UserPreference {
 
-    @KotPrefKey(key = "user_id")
-    const val ID = -1
-
-    const val FLOAT: Float = 5.6f
-
-    const val LONG: Long =  Long.MAX_VALUE
-
-    const val BOOLEAN: Boolean = false
-
     @KotPrefKey(resId = R.string.preference_key_user_name)
-    const val USER_NAME: String = ""
+    const val NAME: String = ""
 
-    val TAGS: Set<String> = setOf("a", "b", "b")
+    val TAGS: Set<String> = setOf("Apple", "Banana", "Cat")
+
+    @KotPrefKey(key = "user_id")
+    const val ID = 20191015
+
+    const val ADMIN_MODE: Boolean = false
+
+    const val RATE: Float = 0f
+
+    const val EXPERIENCE_POINT: Long =  0
 
 }

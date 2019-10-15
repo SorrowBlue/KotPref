@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">KotPref</string>
+    <string name="app_name">KotPref Demo</string>
     <string name="preference_key_user_name">user_name</string>
 </resources>

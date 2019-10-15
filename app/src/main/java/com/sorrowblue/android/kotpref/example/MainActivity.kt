@@ -6,15 +6,11 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.observe
-import com.sorrowblue.android.kotpref.R
-import com.sorrowblue.android.kotpref.databinding.ActivityMainBinding
-import com.sorrowblue.android.kotpref.example.preference.UserPreference
-import com.sorrowblue.android.kotpref.getSharedPreference
-import com.sorrowblue.android.kotpref.putSharedPreference
+import com.sorrowblue.android.kotpref.example.databinding.MainActivityBinding
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: MainActivityBinding
     private val viewModel: MainViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {

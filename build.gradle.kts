@@ -27,6 +27,15 @@ subprojects {
     repositories {
         maven(url = "https://sorrowblue.com/KotPref/repository")
     }
+    common {
+        compileOptions {
+            sourceCompatibility = JavaVersion.VERSION_1_8
+            targetCompatibility = JavaVersion.VERSION_1_8
+        }
+        kotlinOptions {
+            jvmTarget = "1.8"
+        }
+    }
 
     tasks.withType<KotlinCompile>().configureEach {
         println("Configuring $name in project ${project.name}...")

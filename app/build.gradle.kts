@@ -25,10 +25,6 @@ android {
         }
     }
     dataBinding { isEnabled = true }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
 }
 
 dependencies {
@@ -38,7 +34,7 @@ dependencies {
     implementation(Deps.`core-ktx`)
     Deps.lifecycles.forEach { implementation(it) }
     implementation("androidx.activity:activity-ktx:1.1.0-beta01")
-    implementation("androidx.cardview:cardview:1.0.0")
+    implementation("com.google.android.material:material:1.1.0-beta01")
 //    implementation(project(":kotpref"))
 //    kapt(project(":compiler"))
     implementation("com.sorrowblue.android.kotpref:kotpref:1.0.1")
