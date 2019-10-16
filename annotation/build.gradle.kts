@@ -3,7 +3,7 @@ plugins {
     maven
 }
 
-uploadArchives(version = "1.0.1", artifactId = "annotation")
+uploadArchives(version = "1.1.0", artifactId = "annotation")
 
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to arrayOf("*.jar"))))
