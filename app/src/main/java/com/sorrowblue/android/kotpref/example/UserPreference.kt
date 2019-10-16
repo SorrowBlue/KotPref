@@ -6,7 +6,7 @@ import com.sorrowblue.android.kotpref.annotation.KotPrefKey
 @KotPref(keyPrefix = "user_", classRename = "UserPreference")
 object UserPreference {
 
-    @KotPrefKey(resId = R.string.preference_key_user_name)
+    @KotPrefKey(resKey = "preference_key_user_name")
     const val NAME: String = ""
 
     val TAGS: Set<String> = setOf("Apple", "Banana", "Cat")
@@ -22,12 +22,3 @@ object UserPreference {
 
 }
 
-@KotPref(classRename = "PasscodePreferenceImp")
-object PasscodePreference {
-
-    @KotPrefKey(resId = 0)
-    const val USER_AUTH = false
-
-    @KotPrefKey(resId = R.string.preference_key_user_name)
-    const val USED_DEVICE_SECURITY = false
-}

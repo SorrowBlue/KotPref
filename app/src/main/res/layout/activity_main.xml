@@ -56,7 +56,7 @@
                         android:layout_height="wrap_content"
                         android:hint="UserName"
                         android:singleLine="true"
-                        android:text="@{viewModel.userName}" />
+                        android:text="@={viewModel.userName}" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 

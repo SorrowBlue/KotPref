@@ -1,6 +1,7 @@
 package com.sorrowblue.android.kotpref.example
 
 import android.app.Application
+import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import androidx.lifecycle.*
@@ -65,6 +66,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application), L
 
     @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
     fun saveData() {
+        Log.d("APPAPP", "userName${userName.value}")
         adminMode.value?.let { useradminmode = it }
         userTags.value?.toSet()?.also { usertags = it }
         userName.value?.also { username = it }

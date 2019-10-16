@@ -11,7 +11,7 @@ internal class CompileParams(
         key?.let {
             "object $name :	${compileClassInfo.classRename ?: compileClassInfo.name}<$type>(${compileClassInfo.packageName}.${compileClassInfo.name}.${name}, key = \"$it\")"
         } ?: resKey?.let {
-            "object $name :	${compileClassInfo.classRename ?: compileClassInfo.name}<$type>(${compileClassInfo.packageName}.${compileClassInfo.name}.${name}, resKey = $it)"
+            "object $name :	${compileClassInfo.classRename ?: compileClassInfo.name}<$type>(${compileClassInfo.packageName}.${compileClassInfo.name}.${name}, resKey = \"$it\")"
         } ?: "object $name : ${compileClassInfo.classRename ?: compileClassInfo.name}<$type>(${compileClassInfo.packageName}.${compileClassInfo.name}.${name}, key = \"$name\")"
 }
 

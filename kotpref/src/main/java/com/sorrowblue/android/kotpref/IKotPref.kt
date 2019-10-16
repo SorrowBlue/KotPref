@@ -1,6 +1,7 @@
 package com.sorrowblue.android.kotpref
 
 import android.content.Context
+import android.util.Log
 import kotlin.properties.ReadWriteProperty
 
 abstract class IKotPrefKey<T : Any>(
@@ -15,7 +16,9 @@ abstract class IKotPrefKey<T : Any>(
                 it,
                 "string",
                 context.packageName
-            )
+            ).apply {
+                Log.d("APPAPP", "IDENTI = $this")
+            }
         }?.let(context::getString)
             ?: key ?: this::class.java.simpleName
         return prefix?.let { "$it$key" } ?: key
