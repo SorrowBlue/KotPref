@@ -6,11 +6,17 @@ import kotlin.properties.ReadWriteProperty
 abstract class IKotPrefKey<T : Any>(
     val default: T,
     val key: String?,
-    val resId: Int?
+    val resKey: String?
 ) {
     abstract val prefix: String?
     fun getName(context: Context): String {
-        val key = resId?.let(context::getString)
+        val key = resKey?.let {
+            context.resources.getIdentifier(
+                it,
+                "string",
+                context.packageName
+            )
+        }?.let(context::getString)
             ?: key ?: this::class.java.simpleName
         return prefix?.let { "$it$key" } ?: key
     }
