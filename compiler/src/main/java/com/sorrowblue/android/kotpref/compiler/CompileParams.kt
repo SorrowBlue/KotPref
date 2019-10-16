@@ -5,13 +5,13 @@ internal class CompileParams(
     val type: String,
     var value: String,
     var key: String? = null,
-    var resId: Int? = null
+    var resKey: String? = null
 ) {
     fun toString(compileClassInfo: CompileClassInfo) =
         key?.let {
             "object $name :	${compileClassInfo.classRename ?: compileClassInfo.name}<$type>(${compileClassInfo.packageName}.${compileClassInfo.name}.${name}, key = \"$it\")"
-        } ?: resId?.let {
-            "object $name :	${compileClassInfo.classRename ?: compileClassInfo.name}<$type>(${compileClassInfo.packageName}.${compileClassInfo.name}.${name}, resId = $it)"
+        } ?: resKey?.let {
+            "object $name :	${compileClassInfo.classRename ?: compileClassInfo.name}<$type>(${compileClassInfo.packageName}.${compileClassInfo.name}.${name}, resKey = $it)"
         } ?: "object $name : ${compileClassInfo.classRename ?: compileClassInfo.name}<$type>(${compileClassInfo.packageName}.${compileClassInfo.name}.${name}, key = \"$name\")"
 }
 

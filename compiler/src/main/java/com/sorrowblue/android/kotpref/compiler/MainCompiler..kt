@@ -4,9 +4,7 @@ import com.google.auto.service.AutoService
 import com.sorrowblue.android.kotpref.annotation.KotPref
 import com.sorrowblue.android.kotpref.annotation.KotPrefKey
 import java.io.File
-import java.util.*
 import javax.annotation.processing.*
-
 import javax.lang.model.SourceVersion
 import javax.lang.model.element.TypeElement
 import javax.tools.Diagnostic
@@ -45,12 +43,9 @@ class MainCompiler : AbstractProcessor() {
                 val fieldName = element.simpleName.toString().replace("\$annotations", "")
                 it.params.forEach {
                     if (it.name == fieldName) {
-                        it.key = element.getAnnotation(KotPrefKey::class.java).key.let {
-                            if (it != "") it else null
-                        }
-                        it.resId = element.getAnnotation(KotPrefKey::class.java).resId.let {
-                            if (it != 0) it else null
-                        }
+                        it.key = element.getAnnotation(KotPrefKey::class.java).key.ifEmpty { null }
+                        it.resKey =
+                            element.getAnnotation(KotPrefKey::class.java).resKey.ifEmpty { null }
                     }
                 }
             }
@@ -65,7 +60,10 @@ class MainCompiler : AbstractProcessor() {
                     return@forEach
                 }
             val file =
-                File(kaptKotlinGeneratedDir, ko.packageName.replace(".", "/") + "/preference/").let {
+                File(
+                    kaptKotlinGeneratedDir,
+                    ko.packageName.replace(".", "/") + "/preference/"
+                ).let {
                     if (it.exists().not()) {
                         it.mkdirs()
                     }
@@ -76,9 +74,10 @@ class MainCompiler : AbstractProcessor() {
 
             import com.sorrowblue.android.kotpref.IKotPrefKey
 
-			sealed class ${ko.classRename ?: ko.name}<T : Any>(default: T, key: String? = null, resId: Int? = null) : IKotPrefKey<T>(default, key, resId) {
+			sealed class ${ko.classRename
+                ?: ko.name}<T : Any>(default: T, key: String? = null, resKey: String? = null) : IKotPrefKey<T>(default, key, resKey) {
 				
-				override val prefix = ${ko.keyPrefix?.let { "\"$it\"" }  ?: "null"}
+				override val prefix = ${ko.keyPrefix?.let { "\"$it\"" } ?: "null"}
 				
 				${ko.params.map { (it.toString(ko)) }.joinToString("\n\t\t\t\t")}
 			}
