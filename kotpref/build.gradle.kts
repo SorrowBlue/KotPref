@@ -28,7 +28,7 @@ android {
     }
 }
 
-uploadArchives(version = "1.1.0", artifactId = "kotpref")
+uploadArchives(version = "1.1.1", artifactId = "kotpref")
 
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to arrayOf("*.jar"))))

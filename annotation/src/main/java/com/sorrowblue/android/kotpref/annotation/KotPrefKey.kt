@@ -1,5 +1,6 @@
 package com.sorrowblue.android.kotpref.annotation
 
+@Suppress("unused")
 @Target(AnnotationTarget.PROPERTY)
 @Retention(AnnotationRetention.SOURCE)
 @MustBeDocumented

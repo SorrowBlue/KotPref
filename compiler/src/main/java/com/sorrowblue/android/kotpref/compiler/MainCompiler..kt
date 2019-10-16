@@ -24,7 +24,7 @@ class MainCompiler : AbstractProcessor() {
         roundEnv: RoundEnvironment
     ): Boolean {
         val list =
-            kotlin.runCatching {
+            runCatching {
                 roundEnv.getElementsAnnotatedWith(KotPref::class.java).map {
                     CompileClassInfo(
                         name = it.className,
@@ -39,9 +39,9 @@ class MainCompiler : AbstractProcessor() {
             }.getOrNull() ?: return false
         roundEnv.getElementsAnnotatedWith(KotPrefKey::class.java).map { element ->
             val thisClass = element.enclosingElement.simpleName.toString()
-            list.find { it.name == thisClass }?.let {
+            list.find { it.name == thisClass }?.let { info ->
                 val fieldName = element.simpleName.toString().replace("\$annotations", "")
-                it.params.forEach {
+                info.params.forEach {
                     if (it.name == fieldName) {
                         it.key = element.getAnnotation(KotPrefKey::class.java).key.ifEmpty { null }
                         it.resKey =
@@ -79,7 +79,7 @@ class MainCompiler : AbstractProcessor() {
 				
 				override val prefix = ${ko.keyPrefix?.let { "\"$it\"" } ?: "null"}
 				
-				${ko.params.map { (it.toString(ko)) }.joinToString("\n\t\t\t\t")}
+				${ko.params.joinToString("\n\t\t\t\t") { (it.toString(ko)) }}
 			}
 """.trimIndent()
             file.writeText(text)

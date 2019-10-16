@@ -4,7 +4,7 @@ plugins {
     maven
 }
 
-uploadArchives(version = "1.1.0", artifactId = "compiler")
+uploadArchives(version = "1.1.1", artifactId = "compiler")
 
 dependencies {
     implementation(Deps.`kotlin-stdlib`)

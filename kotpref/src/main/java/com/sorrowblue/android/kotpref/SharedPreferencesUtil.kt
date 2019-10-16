@@ -2,7 +2,6 @@ package com.sorrowblue.android.kotpref
 
 import android.content.Context
 import android.content.SharedPreferences
-import android.util.Log
 import androidx.core.content.edit
 import androidx.fragment.app.Fragment
 import androidx.preference.PreferenceManager
@@ -37,7 +36,6 @@ internal fun <T : Any> SharedPreferences.putValue(
         }
     }
 }
-typealias StringSet = Set<String>
 
 @Suppress("UNCHECKED_CAST")
 fun <T : Any> SharedPreferences.getValue(key: String, default: T): T = when (default) {

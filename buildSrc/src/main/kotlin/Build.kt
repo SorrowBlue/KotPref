@@ -1,7 +1,7 @@
 @Suppress("ObjectPropertyName")
 object Build {
-    const val versionCode = 1
-    const val versionName = "1.0"
+    const val versionCode = 2
+    const val versionName = "1.1.0"
     const val compileSdkVersion = 29
     const val minSdkVersion = 23
     const val buildToolsVersion = "29.0.2"

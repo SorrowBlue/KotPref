@@ -13,13 +13,13 @@ object Deps {
     const val constraintlayout =
         "androidx.constraintlayout:constraintlayout:${Version.constraintlayout}"
 
-    const val `lifecycle-extensions` =
+    private const val `lifecycle-extensions` =
         "androidx.lifecycle:lifecycle-extensions:${Version.lifecycle}"
-    const val `lifecycle-common-java8` =
+    private const val `lifecycle-common-java8` =
         "androidx.lifecycle:lifecycle-common-java8:${Version.lifecycle}"
-    const val `lifecycle-viewmodel-ktx` =
-        "androidx.lifecycle:lifecycle-viewmodel-ktx:${Version.lifecycle}" // For Kotlin use lifecycle-viewmodel-ktx
-    const val `lifecycle-livedata-ktx` =
+    private const val `lifecycle-viewmodel-ktx` =
+        "androidx.lifecycle:lifecycle-viewmodel-ktx:${Version.lifecycle}"
+    private const val `lifecycle-livedata-ktx` =
         "androidx.lifecycle:lifecycle-livedata-ktx:${Version.lifecycle}"
 
     val lifecycles = listOf(
